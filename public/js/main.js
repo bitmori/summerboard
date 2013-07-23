@@ -16,9 +16,11 @@ $(function(){
 
     // The URL of your web server (the port is set in app.js)
     var url = 'http://localhost:3000';
-    var outerbox = $("#outerbox");
+    //var outerbox = $("#outerbox");
     var userlist = $("table#userlist");
-    userlist.width()
+    var talk = $('#talkarea');
+    var talks = $('#talks');
+    var talkcount = 0;
     var doc = $(document),
         win = $(window),
         canvas = $('#paper'),
@@ -77,6 +79,27 @@ $(function(){
         clients[data.id].y = data.y;
     });
 
+    socket.on('speaking', function (data) {
+        if(talkcount==12){
+            $('li').last().remove();
+        }else{
+            talkcount++;
+        }
+        $('<li>'+data.id+': '+data.thought+'</li>').css('color', palette[data.color]).prependTo(talks);
+    });
+
+    $('#talkbtn').click(function () {
+        var thought = talk.val();
+        if(thought.length){
+            socket.emit('speak', {
+                'id': my.id,
+                'color': my.color,
+                'thought': thought
+            });
+            talk.val('');
+        }
+    });
+
     var prev = {};
 
     canvas.on('mousedown',function(e){
@@ -127,5 +150,4 @@ $(function(){
         ctx.stroke();
         ctx.closePath();
     }
-
 });

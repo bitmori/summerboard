@@ -12,28 +12,28 @@
 /*-------------------------
 	General Styles
 --------------------------*/
-
-
+html{
+	background:url('../img/bg.png') repeat #e4e4e4;	
+	overflow:hidden;
+}
 #mainarea{
-	background:url('../img/bg.png') repeat #e4e4e4;
 	padding-right: 200px;
 	/* This will hide the extra canvas if the screen is small */
-	overflow:hidden;
 }
 
 #outerbox{
+	box-shadow: 3px 0 2px rgba(0,0,0,0.5) inset;
 	background:url('../img/linen.png') repeat #e4e4e4;
 	position: fixed;
 	top:0;
 	right:0;
 	width: 200px;
 	height: 100%;
-	overflow:hidden;
 }
 
 tr{
 	color: rgb(200,200,200);
-	position: absolute;
+	/*position: absolute;*/
 	padding-left: 5px;
 	padding-right: 5px;
 	padding-top: 5px;
@@ -110,55 +110,42 @@ h3{
 }
 
 
-
 /*----------------------------
 	The Footer
 -----------------------------*/
 
 
 footer{
-	background-color: #111111;
+	background-color: rgb(222,222,222);
 	bottom: 0;
-	box-shadow: 0 -1px 2px rgba(0,0,0,0.4);
-	height: 45px;
+	box-shadow: 0 2px 2px rgba(0,0,0,0.4) inset;
+	height: 64px;
 	left: 0;
 	position: fixed;
 	width: 100%;
 	z-index: 100000;
 }
 
-footer h2{
-	color: #EEEEEE;
-	font-size: 14px;
-	font-weight: normal;
-	left: 50%;
-	margin-left: -400px;
-	padding: 13px 0 0;
+textarea{
+	resize:none;
+    width:100%;
+}
+
+#tadiv{
+	padding-top: 4px;
+	padding-left: 60px;
+	padding-right: 14px;
+	margin: 5px;
+	height: 100%;
+}
+
+#tbdiv{
 	position: absolute;
-	width: 540px;
+	padding: 18px 5px;
+	width: 60px;
+	height: 40px;
 }
 
-footer h2 i{
-	font-style:normal;
-	color:#888;
-}
-
-footer a.tzine,a.tzine:visited{
-	color: #999999;
-	font-size: 12px;
-	left: 50%;
-	margin: 16px 0 0 110px;
+#talks{
 	position: absolute;
-	text-decoration: none;
-	top: 0;
-}
-
-footer a i{
-	color:#ccc;
-	font-style: normal;
-}
-
-footer a i b{
-	color:#c92020;
-	font-weight: normal;
 }

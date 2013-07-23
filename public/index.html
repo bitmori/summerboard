@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<link rel="stylesheet" href="/css/bootstrap.css" />
 	<link rel="stylesheet" href="/css/styles.css" />
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -10,15 +11,16 @@
 </head>
 <body>
 	<div id="mainarea">
+		<ul id="talks"></ul>
 		<div id="cursors">
 			<!-- mouse pointers will be created here-->
 		</div>
-		<canvas id="paper" width='1900' height='1000'>
+		<canvas id="paper" width='1920' height='1080'>
 			Your browser does not support the awesome html5 canvas.
 		</canvas>
 
 		<hgroup id="instructions">
-			<h1>Draw Anywhere!</h1>
+			<h1>Welcome to Summerboard!</h1>
 			<h2>You will see everyone else who is doing the same</h2>
 			<h3>Tip: if the stage gets dirty, simply reload the page.</h3>
 		</hgroup>
@@ -26,6 +28,11 @@
 	<div id="outerbox">
 		<table id="userlist"></table>
 	</div>
+	<footer>
+		<div id="tbdiv"><input id="talkbtn" type="button" class="btn btn-primary" value="Talk" /></div>
+		<div id="tadiv"><textarea id="talkarea" rows="" cols="" placeholder="Let's talk something."></textarea></div>
+	</footer>
+
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 	<script src="/js/main.js"></script>

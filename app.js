@@ -56,4 +56,7 @@ io.sockets.on('connection', function (socket) {
     }
     socket.broadcast.emit('offline', {id: id});
 	});
+  socket.on('speak', function (data) {
+    io.sockets.emit('speaking', data);
+  })
 });
