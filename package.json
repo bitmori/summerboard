@@ -8,10 +8,8 @@
   "dependencies": {
     "express": "*",
     "ejs": "*",
-    //"jade": "*",
     "socket.io": "*",
-    "hat": "*",
-
+    "hat": "*"
   },
   "subdomain": "summerboard",
   "engines": {
